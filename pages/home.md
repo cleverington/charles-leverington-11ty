@@ -7,14 +7,56 @@ eleventyNavigation:
   key: Home
   order: 0
 ---
-# Welcome
+## Running 'TODO' List
 
-This is a template for building a simple blog website with the [Eleventy static site generator](https://www.11ty.dev), with deployment to [Netlify](https://www.netlify.com).
+```md
+- [ ] Set up SCSS theming (and Bootstrap).
+- [ ] Update `.eleventy.js` with SCSS changes (e.g.: Move everything into a `src/` folder to clean it up.)
+- [ ] Add a redirect to the "GitHub" Jekyll site, in order to unpublish it.
+- [ ] Update content on the 'About' page.
+- [ ] Update 'Home' page.
+- [ ] Add `.editorconfig` file, with `.md` configs, so it auto-saves correctly.
+- [ ] Update 'Contact' page.
+- [ ] Finish 'Roadmap' page.
+- [ ] Add first 'Showcase' post.
+- [ ] Update `.nvmrc` from "12" to "16".
+- [ ] Update `_data/metadata.json` to actually have **MY** content (and any globals).
+- [ ] Update existing 'Layouts' ( `_includes/layouts/` )
+- [ ] Add new Layouts
+  - [ ] Showcase
+  - [ ] Taxonomy: Category
+- [ ] Update existing 'Components' ( `_includes/components/` )
+- [ ] Create 'Components' (and templates).
+- [ ] Create 'Showcase' homepage and initial content.
+- [ ] Review and test converting from NunJucks.js to one of the [other available languages in 11ty](https://www.11ty.dev/docs/languages/).
+```
 
-Includes [Netlify CMS](https://www.netlifycms.org) for WYSIWYG content editing, and [Netlify Forms](https://www.netlify.com/docs/form-handling) for processing your site's form data.
+## The Netlify + 11ty Build Kit
 
-For more info on installation and usage, view the [project repo]({{ pkg.repository.url }}) on GitHub.
+This sit was created using a template for building a simple blog website with the [Eleventy static site generator](https://www.11ty.dev), which has automated deployment to [Netlify](https://www.netlify.com).
 
-Or click the button below to deploy your own copy of this project to Netlify.
+- The one-click created site includes [Netlify CMS](https://www.netlifycms.org) for WYSIWYG content editing, and [Netlify Forms](https://www.netlify.com/docs/form-handling) for processing your form data.
+- Though not built-in to the **kit**, AWS Lambda Functions are [baked into Netlify](https://www.netlify.com/products/functions/).  The site will (eventually) be updated to utilize these functions for, say, a custom 'TODO' list, which auto-updates to the Netlify CMS backend.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/danurbanowicz/eleventy-netlify-boilerplate&stack=cms)
+For more info on installation and usage of the original kit, view the [project repo](https://eleventy-netlify-boilerplate.netlify.app) on GitHub.
+
+## Why Netlify?  Why 11ty?
+
+### Why Netlify/11ty tl::dr
+
+11ty style kits are _DEVELOPER_ friendly kits.  That said, nothing stopping you from building a Developer-Friendly Front-End/Site in something like 11ty and coming in afterwards to replace the variable calls with imported JSON content from a WP Backend....
+
+### Why Netlify/11ty Wall-of-Text
+
+Is it faster? No... unless you've done it before and have boilerplate code.
+Is it easier? Also no... unless, again, you've done it before and have boilerplate code.
+
+If you **have** boilerplate code? Yes.  Its world's easier and faster than building something in Drupal or WordPress because a lot of the "overhead" with things like Paragraphs (Drupal), Advanced Custom Fields (WordPress), or custom Blocks (WordPress) are
+
+On the flip-side, 11ty requires a higher willingness to work with **very** limited interfaces.  All the bells, whistles, widgets, easy plugins/modules, easily adding this or that functionality?  Only if it can be built _quickly_ using [AWS Lambda Functions](https://aws.amazon.com/lambda/).  Even then, you're using **AWS**.  One bad day and you're looking at a bill in the tens of thousands (or millions).
+
+Is it good for **small** sites and/or prototyping?  **ABSOLUTELY**.
+
+If you **know** your End-Users will number in the thousands on a _horrfically busy_ day?  Yeah. 11ty (or similar flat-file generators) with a Netlify CMS backend could save tons of Dev-hours, prep hours, etc. _while_ allowing for iterative Component Development.
+
+Globals variables (like ACF's Theme Settings)?  Those are actually just `.json` data within the `_data/metadata.json` file.  **SUPER** easier, yes.  But also _not_ PM/Client/etc. friendly.

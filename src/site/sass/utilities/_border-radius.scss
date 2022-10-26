@@ -1,0 +1,34 @@
+//
+// Layout Controls for img tags
+// See ./../node_modules/bootstrap/mixins/_border-radius.scss
+
+$radius: 8em;
+$sides: 'top-left', 'top-right', 'bottom-left', 'bottom-right';
+
+@mixin rounded($name, $radius, $change) {
+  .rounded-#{$name}-#{$change} {
+    border-#{$name}-radius: ($radius * (1 + (($change/2) - 1 ) ));
+  }
+}
+
+@mixin rounded-side($side, $radius, $change) {
+  .rounded-#{$side}-#{$change} {
+    border-#{$side}-left-radius: ($radius * (1 + (($change/2) - 1 ) ));
+    border-#{$side}-right-radius: ($radius * (1 + (($change/2) - 1 ) ));
+  }
+}
+
+.rounded-0 {
+  border-radius: 0;
+}
+
+@each $side in $sides {
+  @for $i from 1 to 4 {
+    @include rounded("#{$side}", $radius, $i);
+  }
+}
+
+@for $i from 1 to 4 {
+  @include rounded-side("top", $radius, $i);
+  @include rounded-side("bottom", $radius, $i);
+}

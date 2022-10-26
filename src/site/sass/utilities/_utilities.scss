@@ -1,0 +1,19 @@
+// ----------
+// Utility Classes
+// ----------
+
+$numbers: (
+  x25: 25%,
+  x50: 50%,
+  x-25: -25%,
+  x-50: -50%
+);
+
+// Create offset-background-variant colors.
+@each $name, $number in $numbers {
+    .offset-bg-#{$name} {
+      &::before {
+        top: $number;
+      }
+    }
+}
