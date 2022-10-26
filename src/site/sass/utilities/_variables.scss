@@ -1,0 +1,20 @@
+//
+// Variables and Variable Overrides
+// See ./../node_modules/bootstrap/scss
+//
+
+// ----------
+// Font Family Variables
+// See @utexas/tds/core/_variables.scss
+$ut-font--serif: 'GT-Sectra', Georgia, serif !default;
+$ut-font--sans: 'benton-sans', Arial, Helvetica, sans-serif !default;
+
+$font--code: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+$font--pre: 'Courier 10 Pitch', Courier, monospace;
+
+// ----------
+// Font Family Variables
+// See bootstrap/scss/_variables.scss
+$font-family-sans-serif: Arial, Helvetica, sans-serif !default;
+$font-family-monospace: Georgia, serif !default;
+$font-family-base: $font-family-sans-serif;

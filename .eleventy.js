@@ -97,6 +97,11 @@ module.exports = function(eleventyConfig) {
     .use(markdownItAnchor, opts)
   );
 
+  // Configure Sass
+  eleventyConfig.setBrowserSyncConfig({
+		files: './_site/css/**/*.css'
+	});
+
   return {
     templateFormats: ["md", "njk", "html", "liquid"],
 

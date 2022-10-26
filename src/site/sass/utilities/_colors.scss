@@ -1,0 +1,37 @@
+//
+// Variables For Colors.
+//
+
+/// Slightly lighten a color
+/// @access public
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+/// For a 10% tint, use tint($var, 10%);
+@function tint($color, $percentage) {
+	@return mix(white, $color, (100% - $percentage));
+}
+
+/// Slightly darken a color
+/// @access public
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+/// For a 10% shade, use shade($var, 10%);
+@function shade($color, $percentage) {
+	@return mix(black, $color, $percentage);
+}
+
+// ----------
+// Primary Palette
+// @todo DEFINE PRIMARY PALETTE
+// @note Bootstrap 5 uses CSS Variables to define all colors at `:root`.
+
+// ----------
+// Web only utility colors
+$error_red: #cd2026;
+
+// ----------
+// Tints and Shades of the Palette
+// Color changes should only make 10% jumps.
+// Example: Background t20 + background t30.

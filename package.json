@@ -3,35 +3,42 @@
   "version": "1.0.3",
   "description": "A boilerplate for building a fast static website with the Eleventy static site generator, for deployment to Netlify.",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "watch": "npx @11ty/eleventy --watch",
-    "serve": "npx @11ty/eleventy --serve",
+    "clean": "rimraf _site",
+    "styles:dev": "npx sass src/site/sass/:_site/css --watch --style=expanded",
+    "styles:prod": "npx sass src/site/_sass:src/site/assets --style=compressed --embed-source-map --quiet",
+    "serve:eleventy": "ELEVENTY_ENV=development eleventy --serve",
+    "serve": "npm-run-all clean --parallel styles:dev serve:eleventy",
+    "build": "npm run styles:prod && npx @11ty/eleventy",
     "debug": "DEBUG=* npx @11ty/eleventy"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate"
+    "url": "https://github.com/cleverington/charles-leverington-11ty"
   },
   "author": {
-    "name": "Dan Urbanowicz",
-    "email": "dan.urbanowicz@gmail.com",
-    "url": "https://github.com/danurbanowicz"
+    "name": "Charles Leverington",
+    "email": "charles.leverington@gmail.com",
+    "url": "https://charles-leverington-11ty.netlify.app/"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate/issues"
+    "url": "https://github.com/cleverington/charles-leverington-11ty/issues"
   },
-  "homepage": "https://github.com/danurbanowicz/eleventy-netlify-boilerplate",
+  "homepage": "https://github.com/cleverington/charles-leverington-11ty",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
     "luxon": "^2.3.0",
     "markdown-it": "^12.3.2",
-    "markdown-it-anchor": "^8.4.1"
+    "markdown-it-anchor": "^8.4.1",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "@11ty/eleventy-navigation": "^0.3.2",
+    "bootstrap": "^5.2.2",
     "clean-css": "^5.2.4",
     "html-minifier": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.55.0",
     "uglify-js": "^3.15.1"
   }
 }
