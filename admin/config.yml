@@ -7,10 +7,10 @@ backend:
 
   # The branch to update (optional; defaults to master)
   # Update this branch (but do not commit) as needed, when working locally
-  branch: initial-build
+  branch: main
 
 # Uncomment to Test/Edit local content
-local_backend: true
+# local_backend: true
 
 # Uncomment below to enable drafts https://www.netlifycms.org/docs/add-to-your-site/#editorial-workflow
 # publish_mode: editorial_workflow
@@ -59,7 +59,7 @@ collections:
     create: true # Change to true to allow editors to create new pages
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Subtitle", name: "subtitle", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Event Date", name: "event_date", widget: "datetime" }
@@ -75,12 +75,24 @@ collections:
           label: "Category",
           name: "category",
           widget: "list",
+          required: true,
           field: { label: "Category Term", name: "category_term", widget: "relation", collection: "category", searchFields: ['title'], valueField: ["title", "teaser_image", "description" ] }
         }
       - { label: "Tags", name: "tags", widget: "list", allow_add: true, default: ["post"] }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Video Embed", name: "video_embed", widget: "markdown" }
-      - { label: "External URL", name: "external_url", widget: "string" }
+      - { label: "External URL", name: "external_url", widget: "string", "hint": "Add an external link to the resource, as needed." }
+      - label: "Testimonials"
+        name: "testimonials"
+        collapsed: false
+        widget: "list"
+        fields:
+          - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
+          - {label: Author, name: author, widget: string }
+      - label: "Page Builder"
+        name: "page_builder"
+        widget: "list"
+        fields:
+          - { label: "Body", name: "body", widget: "markdown" }
+          - { label: "Video Embed", name: "video_embed", widget: "markdown" }
   # Taxonomy: Category
   - name: "category"
     label: "Taxonomy: Category"

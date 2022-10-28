@@ -1,6 +1,7 @@
 ---
 layout: layouts/home.njk
 title: Home
+metaDescription: The homepage for my small 11ty-based + Netlify + Netlify CMS flat-file microsite for showcasing skills, life events, and recipes.
 date: 2016-01-01T00:00:00.000Z
 permalink: /
 eleventyNavigation:
@@ -10,23 +11,25 @@ eleventyNavigation:
 ## Running 'TODO' List
 
 ```md
-- [ ] Set up SCSS theming (and Bootstrap).
-- [ ] Update `.eleventy.js` with SCSS changes (e.g.: Move everything into a `src/` folder to clean it up.)
+- [x] Set up SCSS theming (and Bootstrap).
+- [x] Update `.eleventy.js` with SCSS changes (e.g.: Move everything into a `src/` folder to clean it up.)
+- [x] Update Netlify CMS to use "Local" repo settings, instead of auto-publishing to a branch.
+- [x] Add in Konami Code.
 - [ ] Add a redirect to the "GitHub" Jekyll site, in order to unpublish it.
 - [ ] Update content on the 'About' page.
-- [ ] Update 'Home' page.
-- [ ] Add `.editorconfig` file, with `.md` configs, so it auto-saves correctly.
+- [x] Update 'Home' page.
+- [ ] Add `.editorconfig` file, with `.md` and `.njk` configs, so it auto-saves correctly.
 - [ ] Update 'Contact' page.
 - [ ] Finish 'Roadmap' page.
 - [ ] Add first 'Showcase' post.
 - [ ] Update `.nvmrc` from "12" to "16".
-- [ ] Update `_data/metadata.json` to actually have **MY** content (and any globals).
+- [x] Update `_data/metadata.json` to actually have **MY** content (and any globals).
 - [ ] Update existing 'Layouts' ( `_includes/layouts/` )
 - [ ] Add new Layouts
   - [ ] Showcase
   - [ ] Taxonomy: Category
 - [ ] Update existing 'Components' ( `_includes/components/` )
-- [ ] Create 'Components' (and templates).
+- [ ] Create 'Blocks' (and templates / layout) for 'Page Builder'.
 - [ ] Create 'Showcase' homepage and initial content.
 - [ ] Review and test converting from NunJucks.js to one of the [other available languages in 11ty](https://www.11ty.dev/docs/languages/).
 ```
@@ -59,4 +62,4 @@ Is it good for **small** sites and/or prototyping?  **ABSOLUTELY**.
 
 If you **know** your End-Users will number in the thousands on a _horrfically busy_ day?  Yeah. 11ty (or similar flat-file generators) with a Netlify CMS backend could save tons of Dev-hours, prep hours, etc. _while_ allowing for iterative Component Development.
 
-Globals variables (like ACF's Theme Settings)?  Those are actually just `.json` data within the `_data/metadata.json` file.  **SUPER** easier, yes.  But also _not_ PM/Client/etc. friendly.
+Globals variables (like ACF's Theme Settings)?  Those are actually just `.json` data within the `_data/metadata.json` (or whatever we name it) file.  **SUPER** easier, yes.  But also _not_ PM/Client/etc. friendly.  Multiple theme-settings? Either use an array or create multiple files.  More data for actual _content_?  Could just dump it there too.

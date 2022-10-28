@@ -41,3 +41,10 @@ Other things that _might_ get added in Phase 2:
 - Twitter/Facebook/LinkedIn/etc. integrations.
 - Proof-of-Concept adding a WP Backend for some data (and real-time showing how to 'hybrid' the Headless).
 
+### Content Item: Timeline
+
+This will, eventually, replace the 'About Me' page with a javascript/jQuery based timeline of dates and data-points throughout my career.  Hopefully with colors showcasing different _stages_ of the career.
+
+### Content Item: Filters
+
+This will be the main focal point of the Portfolio App:  Creating a _usable_ filter-based system for showcasing and adding notes / thoughts on the huge amount of skills, abilities, knowledge, digital tools, etc. that I've used, been exposed to, loved, hated, etc. through the last two decades and a handful of years.
