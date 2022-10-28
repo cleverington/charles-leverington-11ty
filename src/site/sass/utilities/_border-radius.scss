@@ -7,14 +7,14 @@ $sides: 'top-left', 'top-right', 'bottom-left', 'bottom-right';
 
 @mixin rounded($name, $radius, $change) {
   .rounded-#{$name}-#{$change} {
-    border-#{$name}-radius: ($radius * (1 + (($change/2) - 1 ) ));
+    border-#{$name}-radius: ($radius * (1 + ( calc($change/2) - 1 ) ));
   }
 }
 
 @mixin rounded-side($side, $radius, $change) {
   .rounded-#{$side}-#{$change} {
-    border-#{$side}-left-radius: ($radius * (1 + (($change/2) - 1 ) ));
-    border-#{$side}-right-radius: ($radius * (1 + (($change/2) - 1 ) ));
+    border-#{$side}-left-radius: ($radius * (1 + ( calc($change/2) - 1 ) ));
+    border-#{$side}-right-radius: ($radius * (1 + ( calc($change/2) - 1 ) ));
   }
 }
 

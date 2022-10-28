@@ -47,6 +47,17 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
   });
 
+  // Where filter {{ array | where: key,value }}
+  eleventyConfig.addFilter('where', function (array, key, value) {
+    return array.filter(item => {
+      const keys = key.split('.');
+      const reducedKey = keys.reduce((object, key) => {
+        return object[key];
+      }, item);
+      return (reducedKey === value ? item : false);
+    });
+  });
+
   // Minify CSS
   eleventyConfig.addFilter("cssmin", function(code) {
     return new CleanCSS({}).minify(code).styles;
@@ -109,15 +120,15 @@ module.exports = function(eleventyConfig) {
     // Leading or trailing slashes are all normalized away, so don’t worry about it.
     // If you don’t have a subdirectory, use "" or "/" (they do the same thing)
     // This is only used for URLs (it does not affect your file structure)
-    pathPrefix: "/",
+    // pathPrefix: "/",
 
     markdownTemplateEngine: "liquid",
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
     dir: {
-      input: ".",
+      input: "src/site",
       includes: "_includes",
-      data: "_data",
+      data: "src/site/_data",
       output: "_site"
     }
   };

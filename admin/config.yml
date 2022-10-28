@@ -2,8 +2,15 @@
 
 # The backend option specifies how to access the content for your site
 backend:
+  # Git Updates
   name: git-gateway
-  branch: main # The branch to update (optional; defaults to master)
+
+  # The branch to update (optional; defaults to master)
+  # Update this branch (but do not commit) as needed, when working locally
+  branch: initial-build
+
+# Uncomment to Test/Edit local content
+local_backend: true
 
 # Uncomment below to enable drafts https://www.netlifycms.org/docs/add-to-your-site/#editorial-workflow
 # publish_mode: editorial_workflow

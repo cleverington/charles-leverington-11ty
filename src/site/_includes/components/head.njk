@@ -6,6 +6,8 @@
   <meta name="description" content="{{ metaDescription or renderData.metaDescription or metadata.description }}">
   <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {% set css %}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <link href="/assets/main.css" rel="stylesheet">
     {% include "assets/css/inline.css" %}
   {% endset %}
   <style>{{ css | cssmin | safe }}</style>
