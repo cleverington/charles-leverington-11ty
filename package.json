@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "rimraf _site",
     "styles:dev": "npx sass src/site/_sass/:src/site/_includes/assets/css --watch --style=expanded",
-    "styles:prod": "npx sass src/site/_sass:assets/css --style=compressed --embed-source-map --quiet",
+    "styles:prod": "npx sass src/site/_sass:_site/assets/css --style=compressed --embed-source-map --quiet",
     "serve:eleventy": "ELEVENTY_ENV=development eleventy --serve",
     "serve": "npm-run-all clean --parallel styles:dev serve:eleventy",
     "build": "npm run styles:prod && npx @11ty/eleventy",

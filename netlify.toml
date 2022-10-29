@@ -11,7 +11,7 @@ ID = "284d2142-2216-4efb-a2be-13623ceec397"
   base = ""
 
   # Default build command.
-  command = "eleventy"
+  command = "npm run build"
 
   # Directory with the serverless Lambda functions to deploy to AWS.
   # functions = "project/functions/"
