@@ -1,9 +1,11 @@
 /**
- * @todo Convert all content to Vanilla.js and drop jQuery altogether
+ * Main.js
+ *
+ * @todo Add linting toolkit(s).
  */
 
 /*
-    IMPORTS
+  IMPORTS
 	You can import directly from node_modules here.
 */
 import $ from 'jQuery';
@@ -14,7 +16,7 @@ import $ from 'jQuery';
 
 	See https://getbootstrap.com/docs/5.2/getting-started/webpack/#setup
 	Options: Alert, Button, Carousel, Collapse, Dropdown, Modal, Offcanvas, Popover,
-	         ScrollSpy, Tab, Toast, Tooltip
+  ScrollSpy, Tab, Toast, Tooltip
 */
 import { Alert, Button, Collapse, Dropdown, Popover } from 'bootstrap'
 
@@ -27,8 +29,10 @@ import konamiCode from './libraries/custom/konami-code';
 /*
     LOAD JS
 */
-$(() => {
-    $('body').addClass('loaded');
+window.addEventListener('DOMContentLoaded', () => {
+
+    let bodyClass = document.querySelector('body')
+    bodyClass.classList.add('loaded');
 
     // Add Libraries
     konamiCode();

@@ -3,8 +3,16 @@ const CleanCSS = require("clean-css");
 const UglifyJS = require("uglify-js");
 const htmlmin = require("html-minifier");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const markdownIt = require("markdown-it");
+const markdownItEmoji = require("markdown-it-emoji");
+const markdownItContainer = require("markdown-it-container");
+const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = function(eleventyConfig) {
+
+  // Adding Experimentational 'Netlify Edge' Support
+  // See https://www.11ty.dev/docs/plugins/edge/
+  // eleventyConfig.addPlugin(EleventyEdgePlugin);
 
   // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -87,14 +95,12 @@ module.exports = function(eleventyConfig) {
   });
 
   // Don't process folders with static assets e.g. images
-  eleventyConfig.addPassthroughCopy("favicon.ico");
-  eleventyConfig.addPassthroughCopy("static/img");
+  eleventyConfig.addPassthroughCopy("src/site/assets");
   eleventyConfig.addPassthroughCopy("admin");
-  eleventyConfig.addPassthroughCopy("_includes/assets/css/inline.css");
+  eleventyConfig.addPassthroughCopy("src/site/_includes/assets/css/inline.css");
 
   /* Markdown Plugins */
-  let markdownIt = require("markdown-it");
-  let markdownItAnchor = require("markdown-it-anchor");
+
   let options = {
     html: true,
     breaks: true,
@@ -103,10 +109,22 @@ module.exports = function(eleventyConfig) {
   let opts = {
     permalink: false
   };
+  let containerOpts = {
+    marker: '^',
+    endMarker: '^'
+  }
 
-  eleventyConfig.setLibrary("md", markdownIt(options)
+  eleventyConfig.setLibrary("md", markdownIt(options));
+
+  eleventyConfig.amendLibrary(
+    "md", mdLib => mdLib
     .use(markdownItAnchor, opts)
+    .use(markdownItEmoji)
+    .use(markdownItContainer, 'container', containerOpts) // Adds '::: container' fenced code-block.
+    .use(markdownItContainer, 'row')       // Adds '::: row' fenced code-block.
+    .use(markdownItContainer, 'column')    // Adds '::: column' fenced code-block.
   );
+
 
   // Configure Sass
   eleventyConfig.setBrowserSyncConfig({

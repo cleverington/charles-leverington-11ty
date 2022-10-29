@@ -8,9 +8,10 @@ eleventyNavigation:
   key: Home
   order: 0
 ---
+^^^ container
+
 ## Running 'TODO' List
 
-```md
 - [x] Set up SCSS theming (and Bootstrap).
 - [x] Update `.eleventy.js` with SCSS changes (e.g.: Move everything into a `src/` folder to clean it up.)
 - [x] Update Netlify CMS to use "Local" repo settings, instead of auto-publishing to a branch.
@@ -32,7 +33,7 @@ eleventyNavigation:
 - [ ] Create 'Blocks' (and templates / layout) for 'Page Builder'.
 - [ ] Create 'Showcase' homepage and initial content.
 - [ ] Review and test converting from NunJucks.js to one of the [other available languages in 11ty](https://www.11ty.dev/docs/languages/).
-```
+^^^
 
 ## The Netlify + 11ty Build Kit
 
@@ -43,12 +44,16 @@ This sit was created using a template for building a simple blog website with th
 
 For more info on installation and usage of the original kit, view the [project repo](https://eleventy-netlify-boilerplate.netlify.app) on GitHub.
 
+^^^ container
 ## Why Netlify?  Why 11ty?
 
+::: row
 ### Why Netlify/11ty tl::dr
 
 11ty style kits are _DEVELOPER_ friendly kits.  That said, nothing stopping you from building a Developer-Friendly Front-End/Site in something like 11ty and coming in afterwards to replace the variable calls with imported JSON content from a WP Backend....
+:::
 
+::: row
 ### Why Netlify/11ty Wall-of-Text
 
 Is it faster? No... unless you've done it before and have boilerplate code.
@@ -63,3 +68,5 @@ Is it good for **small** sites and/or prototyping?  **ABSOLUTELY**.
 If you **know** your End-Users will number in the thousands on a _horrfically busy_ day?  Yeah. 11ty (or similar flat-file generators) with a Netlify CMS backend could save tons of Dev-hours, prep hours, etc. _while_ allowing for iterative Component Development.
 
 Globals variables (like ACF's Theme Settings)?  Those are actually just `.json` data within the `_data/metadata.json` (or whatever we name it) file.  **SUPER** easier, yes.  But also _not_ PM/Client/etc. friendly.  Multiple theme-settings? Either use an array or create multiple files.  More data for actual _content_?  Could just dump it there too.
+:::
+^^^
