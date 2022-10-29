@@ -1,4 +1,7 @@
 _site/
 node_modules/
-# package-lock.json
 .DS_Store
+
+# Ignore Built CSS Files
+src/site/_includes/assets/css/main.css
+src/site/_includes/assets/css/main.css.map

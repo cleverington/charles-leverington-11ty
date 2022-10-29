@@ -20,18 +20,21 @@ By building this app, I'll have **one** single 'source' which can be quickly fil
 The focus of Phase 1 is going to be setup-and-prep.  I may not even _publish_ Phase 1, outside of the default Netlify link that exists.
 
 Features to add Include:
-- The initial 11ty + Netlify Build.
+- :white_check_mark:The initial 11ty + Netlify Build.
+  - :white_check_mark: Update: And apparently upgrade NPM from 12 -> 14 **while** upgrading 11ty from 1.x -> 2.x.
+  - :white_check_mark: Add Emoji support, because why not? :smile:
 - Setting up Content Types within Netlify:
-  - Pages | Default 'pages' content type.
-  - Posts | Default 'posts' content type.
-  - Showcase:
+  - :gear: Pages | Default 'pages' content type.
+  - :gear: Posts | Default 'posts' content type.
+  - :gear: Showcase:
     - This c-type _might_ be split up between "Recipes", "Showcase", and "Advice".
     - The primary goal of this c-type is data-points which can be fed into a filter page (with Accessible modal) that can be quickly sorted across a range of "Types", searched by "Tags", and further sorted by "Category".
-  - Taxonomy: Category | A c-type managed taxonomy that I'll be leveraing Netlify's [Relation](https://www.netlifycms.org/docs/widgets/#relation) and [List](https://www.netlifycms.org/docs/widgets/#relation) Widget's to take advantage of.
-- Adding Bootstrap 5, because why put out effort to custom theme it? I've got _other_ things that can showcase my CSS/JS skills.
-- Creating the initial "Page Builder" tooling (by, again, abusing the [List](https://www.netlifycms.org/docs/widgets/#relation) Widget).
+  - :gear: Taxonomy: Category | A c-type managed taxonomy that I'll be leveraing Netlify's [Relation](https://www.netlifycms.org/docs/widgets/#relation) and [List](https://www.netlifycms.org/docs/widgets/#relation) Widget's to take advantage of.
+- :white_check_mark: Adding Bootstrap 5, because why put out effort to custom theme it? I've got _other_ things that can showcase my CSS/JS skills.
+- :gear: Creating the initial "Page Builder" tooling (by, again, abusing the [List](https://www.netlifycms.org/docs/widgets/#relation) Widget).
 - Adding Components to the "Page Builder" tooling for the 'Page' and 'Posts' c-types. MAYBE not the 'Showcase'.  Probably will add it to the 'Category' c-type, as the focus **of** the 'Category' c-type is a pseudo-glossary which **also** doubles as a Knowledge Base on my skills.
 - Updating the 'Taxonomy: Category' c-type (building it _plain_, to start) to include things like "Proficiency", "References", etc.
+- :white_check_mark: Get the Konami Code Easter Egg to work.  Its _FUN_. It should **work**.
 
 ## Phase 2 | The Content
 

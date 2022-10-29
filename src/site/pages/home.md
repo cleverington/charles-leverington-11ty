@@ -11,19 +11,26 @@ eleventyNavigation:
 ^^^ container
 ## Running 'TODO' List
 
-- [x] Set up SCSS theming (and Bootstrap).
-- [x] Update `.eleventy.js` with SCSS changes (e.g.: Move everything into a `src/` folder to clean it up.)
-- [x] Update Netlify CMS to use "Local" repo settings, instead of auto-publishing to a branch.
-- [x] Add in Konami Code.
+- :white_check_mark: Set up SCSS theming (and Bootstrap).
+- :white_check_mark: Update `.eleventy.js` with SCSS changes (e.g.: Move everything into a `src/` folder to clean it up.)
+- :white_check_mark: Update Netlify CMS to use "Local" repo settings, instead of auto-publishing to a branch.
+- :white_check_mark: Add in Konami Code.
 - [ ] Add a redirect to the "GitHub" Jekyll site, in order to unpublish it.
-- [ ] Update content on the 'About' page.
-- [x] Update 'Home' page.
-- [x] Add `.editorconfig` file, with `.md` and `.njk` configs, so it auto-saves correctly.
-- [ ] Update 'Contact' page.
-- [ ] Finish 'Roadmap' page.
-- [ ] Add first 'Showcase' post.
+- :white_check_mark: Update content on the 'About' page.
+- :white_check_mark: Update 'Home' page.
+- :white_check_mark: Add `.editorconfig` file, with `.md` and `.njk` configs, so it auto-saves correctly.
+- :gear: Update 'Contact' page.
+- :gear: Finish 'Roadmap' page.
+- :gear: Add first 'Showcase' post.
+- :gear: Fix 'Showcase' Collection
+  - :white_check_mark: Remove 'Navigation' option
+  - :white_check_mark: Add in "Type" (which should be almost identical to 'tags').
+  - [ ] Create a few "Category" items.
+  - :white_check_mark: Subtitle: Turn off required.
+  - :white_check_mark: Event Date: Turn off required.
+  - :white_check_mark: External URL: Turn off required.
 - :gear: Update `.nvmrc` from "12" to "16".
-- [x] Update `_data/metadata.json` to actually have **MY** content (and any globals).
+- :white_check_mark: Update `_data/metadata.json` to actually have **MY** content (and any globals).
 - [ ] Update existing 'Layouts' ( `_includes/layouts/` )
 - [ ] Add new Layouts
   - [ ] Showcase
