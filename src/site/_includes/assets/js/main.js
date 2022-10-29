@@ -26,6 +26,16 @@ import { Alert, Button, Collapse, Dropdown, Popover } from 'bootstrap'
 */
 import konamiCode from './libraries/custom/konami-code';
 
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.netlifyIdentity.on("login", () => {
+        document.location.href = "/admin/";
+      });
+    }
+  });
+}
+
 /*
     LOAD JS
 */

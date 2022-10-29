@@ -2,14 +2,13 @@
 layout: layouts/home.njk
 title: Home
 metaDescription: The homepage for my small 11ty-based + Netlify + Netlify CMS flat-file microsite for showcasing skills, life events, and recipes.
-date: 2016-01-01T00:00:00.000Z
+date: 2022-10-15T00:00:00.000Z
 permalink: /
 eleventyNavigation:
   key: Home
   order: 0
 ---
 ^^^ container
-
 ## Running 'TODO' List
 
 - [x] Set up SCSS theming (and Bootstrap).
@@ -19,11 +18,11 @@ eleventyNavigation:
 - [ ] Add a redirect to the "GitHub" Jekyll site, in order to unpublish it.
 - [ ] Update content on the 'About' page.
 - [x] Update 'Home' page.
-- [ ] Add `.editorconfig` file, with `.md` and `.njk` configs, so it auto-saves correctly.
+- [x] Add `.editorconfig` file, with `.md` and `.njk` configs, so it auto-saves correctly.
 - [ ] Update 'Contact' page.
 - [ ] Finish 'Roadmap' page.
 - [ ] Add first 'Showcase' post.
-- [ ] Update `.nvmrc` from "12" to "16".
+- :gear: Update `.nvmrc` from "12" to "16".
 - [x] Update `_data/metadata.json` to actually have **MY** content (and any globals).
 - [ ] Update existing 'Layouts' ( `_includes/layouts/` )
 - [ ] Add new Layouts

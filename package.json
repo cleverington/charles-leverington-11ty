@@ -4,8 +4,8 @@
   "description": "A boilerplate for building a fast static website with the Eleventy static site generator, for deployment to Netlify.",
   "scripts": {
     "clean": "rimraf _site",
-    "styles:dev": "npx sass src/site/_sass/:_site/css --watch --style=expanded",
-    "styles:prod": "npx sass src/site/_sass:src/site/assets --style=compressed --embed-source-map --quiet",
+    "styles:dev": "npx sass src/site/_sass/:src/site/_includes/assets/css --watch --style=expanded",
+    "styles:prod": "npx sass src/site/_sass:assets/css --style=compressed --embed-source-map --quiet",
     "serve:eleventy": "ELEVENTY_ENV=development eleventy --serve",
     "serve": "npm-run-all clean --parallel styles:dev serve:eleventy",
     "build": "npm run styles:prod && npx @11ty/eleventy",
@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@11ty/eleventy-navigation": "^0.3.2",
+    "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.2",
     "clean-css": "^5.2.4",
     "html-minifier": "^4.0.0",
